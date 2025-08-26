@@ -5,14 +5,30 @@ import java.util.Map;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+
+/*
+ * O MVC (Model-View-Controller) é um padrão que separa responsabilidades:
+
+ * Model → dados e regras de negócio.
+
+ * View → interface com o usuário.
+
+ * Controller → recebe requisições, processa e retorna a resposta.
+ */
 
 
+@RestController // Define uma API REST que retorna JSON/XML. | é uma anotação do Spring que indica que a classe é um controlador REST.
+@RequestMapping("/api") // é uma anotação do Spring usada para mapear URLs para métodos em um controller.
 
-@RestController // Define uma API REST que retorna JSON/XML.
 public class EjemploRestController {
 
 
-    @GetMapping("/detalles_info2")
+    //@RequestMapping(path = "/detalles_info2", method = RequestMethod.GET)
+    @GetMapping(path = "/detalles_info2")
+    
     public Map<String, Object>detalles_info2(){
         // Map é uma interface em Java que representa uma estrutura de dados para armazenar pares chave-valor.
         Map<String, Object> respuesta = new HashMap<>(); // new HashMap - Cria um "dicionário" (respuesta) usando HashMap.
