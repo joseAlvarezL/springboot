@@ -1,7 +1,8 @@
 package com.informaticonfig.spring.app1.springboot_applications.controllers;
 
+import java.util.Map;
+
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 
@@ -11,11 +12,11 @@ public class EjemploController {
 
 
     @GetMapping("/detalles_info")
-    public String info(Model model){
+    public String info(Map<String, Object>modelo){
 
-        model.addAttribute("Titulo", "Servidor en linea");
-        model.addAttribute("Servidor","informaticonfig");
-        model.addAttribute("Ip", "192.321.1.1");
+        modelo.put("Titulo", "Servidor en linea");
+        modelo.put("Servidor","informaticonfig");
+        modelo.put("Ip", "192.321.1.1");
 
         return "detalles_info";
     }
