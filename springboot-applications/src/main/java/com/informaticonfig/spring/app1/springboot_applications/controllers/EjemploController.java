@@ -27,6 +27,7 @@ public class EjemploController {// MVC - CONTROLADOR/CONTROLLER
         Empleados empleado1 = new Empleados("Juan","Rodrigues","Calle 1 No 2","gerente",
         35,332131232,001);
 
+        model.addAttribute("Titulo", "")
         model.addAttribute("Empleado",empleado1);
 
         return "detalles_info"; // MVC - VISTA/VIEW
