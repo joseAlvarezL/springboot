@@ -24,10 +24,10 @@ public class EjemploController {// MVC - CONTROLADOR/CONTROLLER
 /* USAR HTML E JSON */
 @GetMapping("/detalles_info")
     public String info(Model model){ // MVC - MODELO/MODEL
-        Empleados empleado1 = new Empleados("Juan","Rodrigues","Calle 1 No 2","gerente",
+        Empleados empleado1 = new Empleados("Juan","Rodrigues",null,"gerente",
         35,332131232,001);
 
-        model.addAttribute("Titulo", "")
+        model.addAttribute("Titulo", "Informacion del Empleado");
         model.addAttribute("Empleado",empleado1);
 
         return "detalles_info"; // MVC - VISTA/VIEW
